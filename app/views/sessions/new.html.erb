@@ -1,0 +1,20 @@
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <!--我们需要指明资源的名字以及相应的 URL -->
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <% end %>
+   <!--为了操作方便，我们还加入了到“注册”页面的链接。-->
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
